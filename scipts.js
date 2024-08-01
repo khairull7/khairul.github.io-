@@ -16,20 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('footer').style.left = '0';
         }
     });
+    document.addEventListener('DOMContentLoaded', () => {
+        const texts = ["front and backend development", "web development"];
+        let index = 0;
+        const changingText = document.querySelector('.changing-text');
+    
+        setInterval(() => {
+            index = (index + 1) % texts.length;
+            changingText.textContent = texts[index];
+        }, 3000);
+    });
+    
 });
 
-// scripts.js
-document.addEventListener('DOMContentLoaded', () => {
-    const dynamicText = document.getElementById('dynamic-text');
-    const texts = ['front and backend development', 'web development'];
-    let currentIndex = 0;
-
-    function changeText() {
-        dynamicText.textContent = texts[currentIndex];
-        currentIndex = (currentIndex + 1) % texts.length;
-        setTimeout(changeText, 3000); // Change text every 3 seconds
-    }
-
-    changeText();
-});
 
